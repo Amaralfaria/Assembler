@@ -1,7 +1,10 @@
 #include <bits/stdc++.h>
 
-#include "funcoesAuxiliaresLigador.h"
 #include "ligador.h"
+#ifndef _funcoesAuxiliaresLigador_h_
+#include "funcoesAuxiliaresLigador.h"
+#define _funcoesAuxiliaresLigador_h_
+#endif
 
 using namespace std;
 

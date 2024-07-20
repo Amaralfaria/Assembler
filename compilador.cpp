@@ -528,7 +528,7 @@ class Assembler{
 
         
         void writeUseAndDefinitionTable(){
-            outputFile << "USO\n";
+            outputFile << "TABELA USO\n";
             for(const auto &simbol: simbolTable){
                 if(!simbol.second.isExtern){
                     continue;
@@ -541,7 +541,7 @@ class Assembler{
             }
             outputFile << "\n";
 
-            outputFile << "DEF\n";
+            outputFile << "TABELA DEF\n";
 
             for(const auto &simbol: simbolTable){
                 if(!simbol.second.isPublic){
@@ -555,8 +555,11 @@ class Assembler{
             }
             outputFile << "\n";
 
-            outputFile << "REL\n";
-            outputFile << mapaBits << "\n\n";  
+            outputFile << "MAPA DE BITS\n";
+            for(char s: mapaBits){
+                outputFile << s << " ";
+            }
+            outputFile << "\n\n";  
         }
         
 

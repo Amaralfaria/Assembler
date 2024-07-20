@@ -1,5 +1,9 @@
 #include <bits/stdc++.h>
 #include <fstream>
+#ifndef _funcoesAuxiliaresLigador_h_
+#include "funcoesAuxiliaresLigador.h"
+#define _funcoesAuxiliaresLigador_h_
+#endif
 
 
 using namespace std;

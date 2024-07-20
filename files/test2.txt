@@ -1,0 +1,5 @@
+mod_b: BEGIN
+PUBLIC R
+R: SPACE
+STOP
+END
