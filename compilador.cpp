@@ -547,10 +547,14 @@ class Assembler{
                 if(!simbol.second.isPublic){
                     continue;
                 }
-                outputFile << simbol.first << " ";
-                for(const auto &position: simbol.second.lineAndColumnPending){
+                outputFile << simbol.first << " " << simbol.second.value;
+                /*for(const auto &position: simbol.second.lineAndColumnPending){
                     outputFile << position.address << " ";
-                }
+                }*/
+
+
+
+
                 outputFile << "\n";
             }
             outputFile << "\n";
