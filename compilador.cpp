@@ -270,6 +270,7 @@ class Assembler{
     fstream outputFile;
     bool hasBegin = false;
     int linesBeforeBegin = 0;
+    bool isModule = false;
     struct instructionAttributes{
         string code;
         int numberOperands;
@@ -426,6 +427,8 @@ class Assembler{
             while(getline(iss,word,',')){
                 if(is_number(word)){
                     procesedLine.push_back(word);
+                    string err = "Erro: operador invalido, linha: " + to_string(line);
+                    erros.push_back(err);
                 }else{
                     string arg = resolveSimbol(word,column+argumentNumber,line,current_postion);
                     procesedLine.push_back(arg);
@@ -580,12 +583,14 @@ class Assembler{
                 }
 
                 if(!label.empty() and word == "BEGIN" and i == 1){
+                    isModule  = true;
                     hasBegin = true;
                     continue;
                 }
 
                 if(!label.empty() and  word == "EXTERN" and i == 1 and  hasBegin){
                     SimbolTableContent content;
+                    isModule  = true;
                     content.isExtern = true;
                     content.value = 0;
                     simbolTable[labelToWord(label)] = content;
@@ -593,6 +598,7 @@ class Assembler{
                 }
 
                 if(word == "PUBLIC" and hasBegin){
+                    isModule  = true;
                     SimbolTableContent content;
                     content.isPublic = true;
                     iss >> word;
@@ -651,7 +657,9 @@ class Assembler{
 
             outputFile.open(outputFilePath,ios::out);
 
-            writeUseAndDefinitionTable();
+            if(isModule){
+                writeUseAndDefinitionTable();
+            }
 
             for(int i = 0;i<processedLines.size();i++){
                 for(int j = 0;j<processedLines[i].size();j++){
