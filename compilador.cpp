@@ -292,6 +292,7 @@ class Assembler{
     };
     map<string, string> useTable;
     map<string,string> definitionTable;
+    string mapaBits = "";
     vector<string> erros;
     struct position{
         int line;
@@ -428,6 +429,7 @@ class Assembler{
                 }else{
                     string arg = resolveSimbol(word,column+argumentNumber,line,current_postion);
                     procesedLine.push_back(arg);
+                    mapaBits += "1";
                 }
 
                 current_postion++;
@@ -477,6 +479,7 @@ class Assembler{
                     addValueToSimbolTable(label,current_position);
                     processedLine.push_back("0");
                     current_position++;
+                    mapaBits += "0";
                     continue;
                 }
 
@@ -484,6 +487,7 @@ class Assembler{
                     addValueToSimbolTable(label,current_position);
                     processedLine.push_back(word);
                     current_position++;
+                    mapaBits += "0";
                     continue;
                 }
 
@@ -495,6 +499,7 @@ class Assembler{
                     instruction = word;
                     processedLine.push_back(getInstructionCode(word));
                     current_position++;
+                    mapaBits += "0";
                     continue;
                 }
 
@@ -549,6 +554,9 @@ class Assembler{
                 outputFile << "\n";
             }
             outputFile << "\n";
+
+            outputFile << "REL\n";
+            outputFile << mapaBits << "\n\n";  
         }
         
 
