@@ -581,7 +581,7 @@ class Assembler{
                     continue;
                 }
 
-                if(!label.empty() and word == "BEGIN" and i == 1){
+                if(/*!label.empty() and*/word == "BEGIN" /* and i == 1*/){
                     isModule  = true;
                     hasBegin = true;
                     continue;
