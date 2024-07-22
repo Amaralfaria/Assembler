@@ -68,8 +68,11 @@ void ligador(string caminho_arq1, string caminho_arq2){
         }
     }
     
+    size_t lastIndex = caminho_arq1.find_last_of("."); 
+    string outputFilePath = caminho_arq1.substr(0, lastIndex) + ".e";
+
     ofstream arquivo_de_saida;
-    arquivo_de_saida.open("prog1.e");
+    arquivo_de_saida.open(outputFilePath);
     if (!arquivo_de_saida){
         cout << "erro: arquivo de saída não pode ser criado\n";
         arquivo_de_saida.close();
