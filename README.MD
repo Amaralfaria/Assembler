@@ -14,8 +14,8 @@ O projeto foi desenvolvido e testado em Linux.
 ## Como Usar
 
 Após a execução do `make`, dois executáveis serão gerados no diretório raiz:
-- `lig`: ligador
-- `comp`: montador
+- `ligador`: ligador
+- `montador`: montador
 
 ### Executando o Montador
 
@@ -25,15 +25,15 @@ Para utilizar o Montador, você deve especificar se deseja realizar o pré-proce
 
 Exemplos de uso:
 ```sh
-./comp -p caminho_para_o_arquivo.txt
-./comp -o caminho_para_o_arquivo.pre
+./montador -p caminho_para_o_arquivo.txt
+./montador -o caminho_para_o_arquivo.pre
 ```
 
 ### Executando o Ligador
 
 Para utilizar o ligador, forneça como argumentos os caminhos para os arquivos objeto:
 ```sh
-./lig caminho_para_arquivo1.o caminho_para_arquivo2.o
+./ligador caminho_para_arquivo1.o caminho_para_arquivo2.o
 ```
 
 ## Comando `make`
