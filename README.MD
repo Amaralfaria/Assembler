@@ -44,7 +44,7 @@ Para utilizar o ligador, forneça como argumentos os caminhos para os arquivos o
 
 Será gerado:
 ```
-prog1.e
+caminho_para_arquivo1.e
 ```
 
 ## Comando `make`
