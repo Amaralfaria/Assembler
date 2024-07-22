@@ -27,12 +27,14 @@ Exemplos de uso:
 ```sh
 ./comp -p caminho_para_o_arquivo.txt
 ./comp -o caminho_para_o_arquivo.pre
+```
 
 ### Executando o Ligador
 
 Para utilizar o ligador, forneça como argumentos os caminhos para os arquivos objeto:
 ```sh
 ./lig caminho_para_arquivo1.o caminho_para_arquivo2.o
+```
 
 ## Comando `make`
 
@@ -40,3 +42,4 @@ O comando `make` compila todo o projeto, gerando os executáveis necessários pa
 
 ```sh
 make
+```
