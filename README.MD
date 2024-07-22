@@ -1,6 +1,6 @@
-# Projeto de Compilador e Ligador
+# Projeto de Montador e Ligador
 
-Este projeto contém um compilador e um ligador simples, permitindo a automação da construção e geração dos arquivos utilizando o `make`.
+Este projeto contém um montador e um ligador simples, permitindo a automação da construção e geração dos arquivos utilizando o `make`.
 
 ## Alunos
 
@@ -15,11 +15,11 @@ O projeto foi desenvolvido e testado em Linux.
 
 Após a execução do `make`, dois executáveis serão gerados no diretório raiz:
 - `lig`: ligador
-- `comp`: compilador
+- `comp`: montador
 
-### Executando o Compilador
+### Executando o Montador
 
-Para utilizar o compilador, você deve especificar se deseja realizar o pré-processamento ou a geração do código objeto, utilizando as flags correspondentes:
+Para utilizar o Montador, você deve especificar se deseja realizar o pré-processamento ou a geração do código objeto, utilizando as flags correspondentes:
 - `-p`: pré-processamento
 - `-o`: geração do código objeto
 
@@ -38,7 +38,7 @@ Para utilizar o ligador, forneça como argumentos os caminhos para os arquivos o
 
 ## Comando `make`
 
-O comando `make` compila todo o projeto, gerando os executáveis necessários para o compilador e o ligador.
+O comando `make` compila todo o projeto, gerando os executáveis necessários para o Montador e o ligador.
 
 ```sh
 make
