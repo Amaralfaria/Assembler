@@ -25,15 +25,26 @@ Para utilizar o Montador, você deve especificar se deseja realizar o pré-proce
 
 Exemplos de uso:
 ```sh
-./montador -p caminho_para_o_arquivo.txt
+./montador -p caminho_para_o_arquivo.asm
 ./montador -o caminho_para_o_arquivo.pre
+```
+
+Será gerado, respectivamente:
+```
+caminho_para_o_arquivo.pre
+caminho_para_o_arquivo.obj
 ```
 
 ### Executando o Ligador
 
 Para utilizar o ligador, forneça como argumentos os caminhos para os arquivos objeto:
 ```sh
-./ligador caminho_para_arquivo1.o caminho_para_arquivo2.o
+./ligador caminho_para_arquivo1.obj caminho_para_arquivo2.obj
+```
+
+Será gerado:
+```
+prog1.e
 ```
 
 ## Comando `make`
