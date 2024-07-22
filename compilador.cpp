@@ -323,7 +323,7 @@ class Assembler{
         Assembler(string filePath){
             this->filePath = filePath;
             size_t lastIndex = filePath.find_last_of("."); 
-            this->outputFilePath = filePath.substr(0, lastIndex) + ".o"; 
+            this->outputFilePath = filePath.substr(0, lastIndex) + ".obj"; 
         }
 
         int getLineNumber(int line){
@@ -540,7 +540,6 @@ class Assembler{
                     outputFile << simbol.first << " ";
                     outputFile << position.address << "\n";
                 }
-                outputFile << "\n";
             }
             outputFile << "\n";
 
