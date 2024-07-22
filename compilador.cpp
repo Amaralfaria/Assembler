@@ -536,9 +536,9 @@ class Assembler{
                 if(!simbol.second.isExtern){
                     continue;
                 }
-                outputFile << simbol.first << " ";
                 for(const auto &position: simbol.second.lineAndColumnPending){
-                    outputFile << position.address << " ";
+                    outputFile << simbol.first << " ";
+                    outputFile << position.address << "\n";
                 }
                 outputFile << "\n";
             }
